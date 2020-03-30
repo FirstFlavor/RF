@@ -9,4 +9,8 @@ output.txt 模型训练10000次后输出的预测结果
 
 predict.py 模型训练源代码
 
+app.py 线上inference代码
 
+index.html 布局文件
+
+在线预测网址： api.pigbenhouse.cn/predict
