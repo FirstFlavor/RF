@@ -115,11 +115,9 @@ def train(n_rounds=500, batch_size=16):
 train(10000)
 
 #保存模型
-
 torch.save(cnn_model.state_dict(),'cnn_model.pkl')
 
 #进行预测
-
 # def plot_pred(index):
 #     pred_seq_normed = pred_next_n(np.array([seqs_normalized[index, -input_seq_len:]]), 72)[0]
 #     seq_min = seqs[index].min()
