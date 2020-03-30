@@ -17,3 +17,4 @@ predict.py 模型训练源代码
 
 api.pigbenhouse.cn/predict 在线预测网址
 
+rest_api_demo.py 基本的rest api
