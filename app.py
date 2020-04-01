@@ -9,11 +9,12 @@ parser.add_argument('history_data', type=str)
 
 #读取数据
 def get_seq(line):
+    line = line + '/n'
     line = line.replace("NA", "nan")
     id = line.split(" ")[0]
-    seq = [float(x) for x in line.split(" ")[1][1:-2].split(',')]
-    seqs = np.array([seq])
-    return id, seqs
+    seq = [float(x) for x in line.split(" ")[1][1:-3].split(',')]
+    seq = np.array([seq])
+    return id, seq
 
 # 线性插值
 def linear_interpolation(seq):
@@ -86,7 +87,7 @@ class Predict(Resource):
         pred_seq = pred_next_n(seq/(seq_max-seq_min) - seq_min)[0] * (seq_max -seq_min) + seq_min
         #输出结果
         resp_line = seq_id + " \"" + ",".join(["{:.2f}".format(x) for x in pred_seq]) + "\""
-        return jsonify({'msg':'success!', 'data':resp_line})
+        return jsonify({'data':resp_line})
     def put(self):
         pass
 
